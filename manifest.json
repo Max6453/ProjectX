@@ -1,0 +1,7 @@
+{
+        "name": "ProjectX",
+        "version:"1.0",
+        "theme_color": "#ffffff",
+        "background_color": "#ffffff",
+        "display": "standalone"
+}
