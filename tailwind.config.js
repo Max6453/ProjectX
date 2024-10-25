@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [".index.html",
-            "./assets/src/*.{css, js}",
-            "./JS/*.{js}"
+  content: ["./ProjectX/*.{html,js}",
   ],
+  // ...
   theme: {
-    extend: {},
   },
-  plugins: [],
+  plugins: [
+    // ...
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
 
