@@ -1,0 +1,23 @@
+{
+  "name": "x-workflow",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./ProjectX/css/input.css -o ./ProjectX/css/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "daisyui": "^4.12.13",
+    "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "flyonui": "^1.1.0",
+    "framer-motion": "^11.11.9",
+    "tailwind-merge": "^2.5.4"
+  }
+}
