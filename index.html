@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
 
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="icon" href="./components/assets/benefactor-logo.jpg">
+    <link rel="icon" type="icon" href="./assets/benefactor-logo.jpg">
     <link rel="stylesheet" href="./css/output.css">
+    <script src="https://kit.fontawesome.com/428684f03b.js" crossorigin="anonymous"></script>
     <script src="./Components/main.jsx"></script>
     <script src="./Components/navbar.jsx"></script>
     <script src="./Components/store.jsx"></script>
@@ -23,8 +24,8 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NRHBD4Q');</script>
     <!-- End Google Tag Manager -->
-</head>
-<body>
+
+
     <style>
       html{
         scroll-behavior: smooth;
@@ -121,69 +122,67 @@
           .prev, .next,.text {font-size: 11px}
         }
     </style>
-    <button class=" right-0 fixed w-16 h-6 bottom-3 z-5 size-40 animate-bounce">
+</head>
+<body>
+
+    <button class=" right-0 fixed w-16 h-6 bottom-3 size-40 animate-bounce">
       <a href="#start">
       <i class="fa-solid fa-arrow-up fa-2xl" style="color: #0026ff"></i></a>
     </button>
+
   <!--Navbar-->
-  <nav class="bg-blue-700" id="start">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-16 items-center justify-between">
-        <div id="navbar-menu" class="absolute inset-y-0 right-0 flex items-center sm:hidden">
-          <!-- Mobile menu button-->
-          <button id="open-btn" type="button" class="relative inline-flex float-right items-center justify-center rounded-md p-2 text-white hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open main menu</span>
-            <!--
-              Icon when menu is closed.
+
+  <nav class="bg-blue-600 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-white text-lg cursor-pointer" onclick="window.location.reload()">
+          <img src="./assets/benefactor-logo.jpg" class=" w-10 flex rounded-md left-0">
+        </div>
+        <div class="block lg:hidden">
+            <button id="menu-button" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="hidden lg:block">
+            <ul class="flex space-x-4 text-white ">
+                <li><a href="#About" class="hover:text-cyan-300">About us</a></li>
+                <li><a href="./carrers.html" class="hover:text-cyan-300">Carrers</a></li>
+                <li><a href="#" class="hover:text-cyan-300">Automotive</a></li>
+                <li><a href="#Store" class="hover:text-cyan-300">Store</a></li>
+                <li><a href="#Footer" class="hover:text-cyan-300">Where to find us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="menu" class="nav-menu max-h-0 overflow-hidden transition-max ease-in-out duration-300">
+    <ul class="flex flex-col p-4 space-y-2 bg-blue-600 text-white lg:hidden">
+        <li><a href="#About" class="hover:text-cyan-300">About us</a></li>
+        <li><a href="./carrers.html" class="hover:text-cyan-300">Carrers</a></li>
+        <li><a href="#" class="hover:text-cyan-300">Automotive</a></li>
+        <li><a href="#Store" class="hover:text-cyan-300">Store</a></li>
+        <li><a href="#Footer" class="hover:text-cyan-300">Where to find us</a></li>
+    </ul>
+</div>
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+        // Toggle the menu visibility
+        const isMenuOpen = menu.style.maxHeight;
+
+        if (isMenuOpen) {
+            menu.style.maxHeight = null; // Close the menu
+        } else {
+            menu.style.maxHeight = menu.scrollHeight + "px"; // Open the menu
+        }
+    });
+</script>
+  <!-- End Navbar-->
   
-              Menu open: "hidden", Menu closed: "block"
-            -->
-            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            <!--
-              Icon when menu is open.
-
-              Menu open: "block", Menu closed: "hidden"
-            -->
-            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>  
-          </button>
-        </div>
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <div onClick="window.location.reload()" class="flex flex-shrink-0 items-center cursor-pointer">
-            <img class="h-8 w-auto rounded-md" src="./components/assets/benefactor-logo.jpg" alt="Your Company">
-          </div>
-
-          <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
-              <a href="#About" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-500 hover:text-white">About Team</a>
-              <a href="./carrers.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-500 hover:text-white">Carrers</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-500 hover:text-white">Racing</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-500 hover:text-white">Automotive</a>
-              <a href="#Store" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-blue-500 hover:text-white">Store</a>
-            </div>
-        </div>
-      </div>
-    </div>
-    <!-- Mobile menu, show/hide based on menu state. -->
-    <div class=" flex-col sm:hidden" id="mobile-menu">
-      <div class="space-y-1 px-2 pb-3 pt-2">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#About" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-blue-500 hover:text-white">About Team</a>
-        <a href="./carrers.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-blue-500 hover:text-white">Carrers</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-blue-500 hover:text-white">Racing</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-blue-500 hover:text-white">Automotive</a>
-        <a href="#Store" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-blue-500 hover:text-white">Store</a>
-      </div>
-    </div>
-    </div>
-  </nav>
-
-  <!--End Navbar-->
-
    <!--First Section-->
    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32" id="About">
     <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
@@ -216,7 +215,7 @@
         </div>
         <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
           <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">Formula 1 Constructors’championships</dt>
+            <dt class="text-base leading-7 text-gray-300">F1 Constructors’ championships</dt>
             <dd class="text-2xl font-bold leading-9 tracking-tight text-white">12</dd>
           </div>
           <div class="flex flex-col-reverse">
@@ -300,8 +299,8 @@
 
   <!--STORE SECTION-->
 
-                  <div class="left-1/3 justify-center items-center inline-flex"  id="Store"> 
-                    <h1 class="text-4xl font-bold tracking-tight justify-center m-14 left-16 inline-flex relative text-black sm:text-6xl">Store</h1>
+                  <div class="left-1/2 justify-center items-center inline-flex"  id="Store"> 
+                    <h1 class="text-4xl font-bold tracking-tight m-14 left-1/2 relative top-3/4 text-black sm:text-6xl">Store</h1>
                   </div>
 
                   <header class="relative bg-blue-00 ">
@@ -310,20 +309,21 @@
                     <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                       <div class="border-b border-gray-200">
                         <div class="flex h-16 items-center">
-                          <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
-                          <button type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
+
+                          <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state.
+                           Add JS ASAP  -->
+                         <!-- <button type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
                             <span class="absolute -inset-0.5"></span>
                             <span class="sr-only">Open menu</span>
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
-                          </button>
-
+                          </button>-->
                           <!-- Logo -->
                           <div class="ml-4 flex lg:ml-0">
                             <a href="#">
                               <span class="sr-only">Your Company</span>
-                              <img class="h-8 w-auto" src="./components/assets/benefactor-logo.jpg" alt="">
+                              <img class="h-8 w-auto" src="./assets/benefactor-logo.jpg" alt="">
                             </a>
                           </div>
 
@@ -374,6 +374,8 @@
                               <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
                             </div>
                           </div>
+
+<!--Hidden mobile menu in store-->
 
                           <div class="ml-auto flex items-center">
                             <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
@@ -663,28 +665,28 @@
                       <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                         <a href="#" class="group">
                           <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./components/assets/black-tahirt.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            <img src="./assets/black-tahirt.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
                           </div>
                           <h3 class="mt-4 text-sm text-gray-700">Black Shirt</h3>
                           <p class="mt-1 text-lg font-medium text-gray-900">$30</p>
                         </a>
                         <a href="#" class="group">
                           <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./components/assets/Blue-Tshirt.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            <img src="./assets/Blue-Tshirt.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                           </div>
                           <h3 class="mt-4 text-sm text-gray-700">Blue Shirt</h3>
                           <p class="mt-1 text-lg font-medium text-gray-900">$25</p>
                         </a>
                         <a href="#" class="group">
                           <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./components/assets/Special-edition.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            <img src="./assets/Special-edition.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
                           </div>
                           <h3 class="mt-4 text-sm text-gray-700">Special Edition T-Shirt</h3>
                           <p class="mt-1 text-lg font-medium text-gray-900">$55</p>
                         </a>
                         <a href="#" class="group">
                           <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./components/assets/pitcrew.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            <img src="./assets/pitcrew.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                           </div>
                           <h3 class="mt-4 text-sm text-gray-700">Pit Crew T-shirt</h3>
                           <p class="mt-1 text-lg font-medium text-gray-900">$20</p>
@@ -692,28 +694,28 @@
                         <!--Second Column-->
                         <a href="#" class="group">
                           <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./components/assets/Hoodie-collab.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            <img src="./assets/Hoodie-collab.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
                           </div>
                           <h3 class="mt-4 text-sm text-gray-700">Porsche x Benefactor collab hoodie</h3>
                           <p class="mt-1 text-lg font-medium text-gray-900">$60</p>
                         </a>
                         <a href="#" class="group">
                           <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./components/assets/porshce-collab.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            <img src="./assets/porshce-collab.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                           </div>
                           <h3 class="mt-4 text-sm text-gray-700">Porsche x Benefacotr collab hoodie</h3>
                           <p class="mt-1 text-lg font-medium text-gray-900">$42</p>
                         </a>
                         <a href="#" class="group">
                           <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./components/assets/porsche-tshirt.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            <img src="./assets/porsche-tshirt.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
                           </div>
                           <h3 class="mt-4 text-sm text-gray-700">Porsche 911 GT3 RS T-Shirt - White Edition</h3>
                           <p class="mt-1 text-lg font-medium text-gray-900">$25</p>
                         </a>
                         <a href="#" class="group">
                           <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./components/assets/Porsche_911_GT3_Hoodie_Black.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            <img src="./assets/Porsche_911_GT3_Hoodie_Black.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                           </div>
                           <h3 class="mt-4 text-sm text-gray-700">Porsche 911 GT3 RS Hoodie - Black Edition</h3>
                           <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
@@ -724,37 +726,54 @@
                   </div>
                                                           
 <!--Footer-->
-<footer class="bg-gray-800 text-gray-300 py-8">
-  <div class="container mx-auto px-4 right-0">
+<footer class="bg-gray-800 text-gray-300 py-8" id="Footer">
+  <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Column 1 -->
       <div>
         <h2 class="text-lg font-semibold mb-4">Benefactor</h2>
         <ul class="space-y-2">
-          <li><a href="#about" class="hover:underline">About Us</a></li>
-          <li><a href="./carrers.html" class="hover:underline">Careers</a></li>
-          <li><a href="#" class="hover:underline">Automotive</a></li>
-          <li><a href="#store" class="hover:underline">Store</a></li>
+          <li><a href="#About" class="hover:text-blue-600">About Us</a></li>
+          <li><a href="./carrers.html" class="hover:text-blue-600">Careers</a></li>
+          <li><a href="#" class="hover:text-blue-600">Automotive</a></li>
+          <li><a href="#Store" class="hover:text-blue-600">Store</a></li>
         </ul>
       </div>
       <!-- Column 2 -->
-      <div>
-        <h2 class="text-lg font-semibold mb-4">Support</h2>
+      <div class="absolute left-1/3">
+        <h2 class="text-lg font-semibold mb-4">Contact</h2>
         <ul class="space-y-2">
-          <li><a href="#" class="hover:underline">Help Center</a></li>
-          <li><a href="#" class="hover:underline">Terms of Service</a></li>
-          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-          <li><a href="#" class="hover:underline">FAQs</a></li>
+          <li><a href="#" class="hover:text-blue-400">
+            <i class="fa-brands fa-instagram fa-lg" style="color: #74C0FC;"></i>
+          Instagram</a></li>
+          <li><a href="#" class="hover:text-blue-400">
+            <i class="fa-brands fa-youtube fa-lg" style="color: #74C0FC;"></i>
+          Youtube</a></li>
+          <li><a href="#" class="hover:text-blue-400">
+            <i class="fa-brands fa-tiktok fa-lg" style="color: #74C0FC;"></i>
+          Tiktok</a></li>
+          <li><a href="#" class="hover:text-blue-400">
+            <i class="fa-brands fa-linkedin fa-lg" style="color: #74C0FC;"></i>
+          LinkedIn</a></li>
         </ul>
       </div>
     </div>
+
+          <div class="relative lg:w-2/3 top-10 left-0 justify-center">
+            <h2 class="text-4xl font-semibold tracking-tight text-white">Subscribe to our newsletter</h2>
+            <p class="mt-4 text-lg text-gray-300">To recieve news regarding our performances across the competition and sales in our store</p>
+            <div class="mt-6 flex max-w-md gap-x-4">
+              <label for="email-address" class="sr-only">Email address</label>
+              <input id="email-address" name="email" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" placeholder="Enter your email">
+              <button type="submit" class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        
     <!-- Bottom Row -->
     <div class="mt-10 bottom-0 text-center text-sm text-gray-400">
       &copy; 2024 Benefactor Group. All rights reserved. If unclear contact <a href="#" class="hover:text-blue-700 text-transparent">Administrator</a>
     </div>
-  </div>
 </footer>
-
-
 </body>
 </html>
