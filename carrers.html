@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Benefactor Racing | Create an Account</title>
+    <title>Benefactor Racing | Carrers</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
 
@@ -9,13 +9,13 @@
     <link rel="icon" type="icon" href="./assets/benefactor-logo.jpg">
     <link rel="stylesheet" href="./css/output.css">
     <script src="https://kit.fontawesome.com/428684f03b.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="./Components/main.jsx"></script>
     <script src="./Components/navbar.jsx"></script>
     <script src="./Components/store.jsx"></script>
     <script src="./Components/slideshow.js"></script>
     <script src="./Components/store-section.jsx"></script>
     <script src="./Components/login.jsx"></script>
-
     <script src="./Components/navCarrer.jsx"></script>
 
 
@@ -26,123 +26,284 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NRHBD4Q');</script>
     <!-- End Google Tag Manager -->
+
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .slider-container {
+        overflow: hidden;
+      }
+    </style>
 </head>
 <body>
-    <nav class="bg-blue-600">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <!-- Mobile menu button-->
-              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="absolute -inset-0.5"></span>
-                <span class="sr-only">Open main menu</span>
-                <!--
-                  Icon when menu is closed.
-      
-                  Menu open: "hidden", Menu closed: "block"
-                -->
-                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+  <nav class="bg-blue-600 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-white text-lg cursor-pointer" onclick="window.location.reload()">
+        <img src="./assets/benefactor-logo.jpg" class=" w-10 lex rounded-md left-0">
+      </div>
+        <div class="block lg:hidden">
+            <button id="menu-button" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
-                <!--
-                  Icon when menu is open.
-      
-                  Menu open: "block", Menu closed: "hidden"
-                -->
-                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start ">
-              <div class="flex flex-shrink-0 items-center cursor-pointer" onClick="window.location.reload()" href="./index.html">
-                <a href="./index.html"><img class="h-8 w-auto rounded-md" src="./assets/benefactor-logo.jpg"  alt="Your Company"></a>
-              </div>
-              <div class="hidden sm:ml-6 sm:block">
-                <div class="flex space-x-4">
-                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="#" class="rounded-md bg-blue-800 px-3 py-2 text-sm font-medium text-white" aria-current="page">Main</a>
-                  <a href="./formula-1.html" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 hover:text-white">Formula 1</a>
-                  <a href="./WEC.html" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 hover:text-white">WEC</a>
-                  <a href="./gtwc.html" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-blue-700 hover:text-white">GTWC</a>
-                </div>
-              </div>
-            </div>
-          </div>
+            </button>
         </div>
-      
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pb-3 pt-2">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="block rounded-md bg-blue-800 px-3 py-2 text-base font-medium text-white" aria-current="page">Main</a>
-            <a href="./formula-1.hmtl" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-blue-700 hover:text-white">Formula 1</a>
-            <a href="./WEC.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-blue-700 hover:text-white">WEC</a>
-            <a href="./gtwc.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-blur-700 hover:text-white">GTWC</a>
-          </div>
-        </div>
-      </nav>
-
-      <h1 class=" bg-gray-50 text-blue-500 font-bold text-center relative top-3 sm:text-6xl">Carrers</h1>
-
-    <div class="bg-gray-50 py-24 sm:py-32">
-        <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <p class="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-blue-950 sm:text-5xl">Do you got what it takes? than join us</p>
-          <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-            <div class="relative lg:row-span-2">
-              <div class="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
-              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-                <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                  <p class="mt-2 text-lg/7 font-medium tracking-tight text-gray-950 max-lg:text-center">WEC</p>
-                  <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Disciplined, motivated, long hours - Most valued attributes if you want to join our <a href="#" class=" underline">WEC Team</a></p>
-                </div>
-                <div class="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
-                  <div class="absolute inset-x-10 bottom-0 top-10 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
-                    <img class="size-full object-cover object-top" src="./assets/Le-mans.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
-            </div>
-
-            <div class="relative flex h-14 flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
-                <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                  <p class="mt-2 text-lg/7 font-medium tracking-tight text-gray-950 max-lg:text-center">WEC</p>
-                  <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Disciplined, motivated, long hours - Most valued attributes if you want to join our <a href="#" class=" underline">WEC Team</a></p>
-                </div>
-                <div class="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
-                  <div class="absolute inset-x-10 bottom-0 top-10 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
-                    <img class="size-full object-cover object-top" src="./assets/Le-mans.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-
-            
-            <div class="relative lg:row-span-2">
-              <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
-              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-                <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                  <p class="mt-2 text-lg/7 font-medium tracking-tight text-gray-950 max-lg:text-center">Powerful APIs</p>
-                  <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget sem sodales gravida.</p>
-                </div>
-                <div class="relative min-h-[30rem] w-full grow">
-                  <div class="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl">
-                    <div class="flex bg-gray-800/40 ring-1 ring-white/5">
-                      <div class="-mb-px flex text-sm font-medium leading-6 text-gray-400">
-                        <div class="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">NotificationSetting.jsx</div>
-                        <div class="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
-                      </div>
-                    </div>
-                    <div class="px-6 pb-14 pt-6">
-                      <!-- Your code example -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
-            </div>
-          </div>
+        <div class="hidden lg:block">
+            <ul class="flex space-x-4 text-white">
+                <li><a href="#F1" class="hover:text-cyan-400">Formula 1</a></li>
+                <li><a href="#WEC" class="hover:text-cyan-400">WEC</a></li>
+                <li><a href="#GT" class="hover:text-cyan-400">GT</a></li>
+                <li><a href="#Partners" class="hover:text-cyan-400">Partnerships</a></li>
+            </ul>
         </div>
     </div>
+</nav>
+<div id="menu" class="nav-menu max-h-0 overflow-hidden transition-max ease-in-out duration-300">
+    <ul class="flex flex-col p-4 space-y-2 bg-blue-600 text-white lg:hidden">
+        <li><a href="#F1" class="hover:text-cyan-400">Formula 1</a></li>
+        <li><a href="#WEC" class="hover:text-cyan-400">WEC</a></li>
+        <li><a href="#GT" class="hover:text-cyan-400">GT</a></li>
+        <li><a href="#Partners" class="hover:text-cyan-400">Partnerships</a></li>
+    </ul>
+</div>
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+        // Toggle the menu visibility
+        const isMenuOpen = menu.style.maxHeight;
+
+        if (isMenuOpen) {
+            menu.style.maxHeight = null; // Close the menu
+        } else {
+            menu.style.maxHeight = menu.scrollHeight + "px"; // Open the menu
+        }
+    });
+</script>
+
+      <h1 class=" text-blue-500 font-bold text-center relative top-3 sm:text-6xl text-5xl">Carrers</h1>
+
+      <div class="overflow-hidden bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div class="lg:pr-8 lg:pt-4">
+              <div class="lg:max-w-lg text-3xl">
+                <h2 class="text-base font-semibold leading-7 text-indigo-600">Choice is yours</h2>
+                <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">You can choose what you want to be</p>
+                <p class="mt-6 leading-8 text-gray-600 text-xl">We are looking for any graduate from acreditated universities or individuals who can and will sacrifice anything to win championships and more.</p>
+                <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                  <div class="relative text-2xl pt-16" id="F1">
+                    <dt class="inline font-semibold text-gray-900">
+                      Formula 1
+                    </dt>
+                    <dd class="inline">Only the ones with strong mind, discipline and energy and motivation to work in such environment as formula 1 is the we are looking for you.
+                      Just <a href="#" class=" hover:text-indigo-600 hover:underline">click here</a> and meet our expectation and we can move further in your dream employment.
+                    </dd>
+                  </div>
+                  <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+                  <div class="relative text-2xl pt-16" id="WEC">
+                    <dt class="inline font-semibold text-gray-900">
+                      World Endurance Championship
+                    </dt>
+                    <dd class="inline">If insomnia bothers you and you love motorsport than this job is for you. Long hours, anxiety around corner and much more stressing situations are waiting for you
+                      <a href="#" class="hover:text-indigo-600 hover:underline">here</a>.
+                    </dd>
+                  </div>
+                  <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+                  <div class="relative text-2xl pt-16" id="GT">
+                    <dt class="inline font-semibold text-gray-900">
+                      GT World Challenge
+                    </dt>
+                    <dd class="inline">If Formula 1 and WEC isn't for you than this is. Working with cars you can casually drive around your city can be tempting however it it (i)ligal.
+                      Fortunately GTWC can compensate your emotions. <a href="#" class="hover:text-indigo-600 hover:underline">Click here</a> for more information.
+                    </dd>
+                  </div>
+
+                </dl>
+              </div>
+            </div>
+            <img src="./assets/heart-of-racing.jpg" alt="Product screenshot" class="max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[46rem] md:-ml-4 lg:-ml-0">
+          </div>
+        </div>
+      </div>
+      <section class="relative isolate overflow-hidden bg-white px-6 sm:py-32 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:max-w-4xl">
+          <figure class="mt-10">
+            <blockquote class="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
+              <p>
+                Motorsport is among the most competitive industries on the planet, where your best can always be better: an extra five per cent off the track could make the difference on it. Whether you work in the garage, the machine shop, on reception, or in marketing, you should never settle for anything less than excellence.  
+
+Why do we push ourselves? Because we love it, because we’re team players, and because there’s a job to be done. We achieve this through empowering and supporting one another and by striving for greatness every time we walk through our factory doors.  
+
+We've built 60 years of history and we won’t be slowing down anytime soon. So, if you want to test your talent with the world watching, then you belong here, writing the next chapter in Benefactor’s racing history.
+              </p>
+            </blockquote>
+            <figcaption class="mt-10">
+              <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                <div class="font-semibold text-gray-900">Maxim Harvančík</div>
+                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+                  <circle cx="1" cy="1" r="1" />
+                </svg>
+                <div class="text-gray-600">CEO of Benefactor Goup</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="slider-container relative w-full h-screen">
+        <!-- Slider Wrapper -->
+        <div id="slider" class="slider w-full h-full">
+    
+          <!-- Slide 1 -->
+          <div class="w-full h-full flex-shrink-0">
+            <img src="./assets/welcome-to-silverstone.png" alt="Slide 1" class="w-full h-full object-cover">
+            <div class="absolute py-6 m-6 mt-4 top-0 text-blue-600 text-5xl">Determination</div>
+          </div>
+    
+          <!-- Slide 2 -->
+          <div class="w-full h-full flex-shrink-0">
+            <img src="./assets/Le-mans.png" alt="Slide 2" class="w-full h-full object-cover">
+            <div class="absolute py-6 m-6 mt-4 top-0 text-blue-600 text-5xl">Motivation</div>
+          </div>
+    
+          <!-- Slide 3 -->
+          <div class="w-full h-full flex-shrink-0">
+            <img src="./assets/B-schlagen.png" alt="Slide 3" class="w-full h-full object-cover">
+            <div class="absolute py-6 m-6 mt-4 top-0 text-blue-600 text-5xl">Expressive</div>
+          </div>
+    
+          <!-- Slide 4 -->
+          <div class="w-full h-full flex-shrink-0">
+            <img src="./assets/porsche-hypercar.jpg" alt="Slide 4" class="w-full h-full object-cover">
+            <div class="absolute py-6 m-6 mt-4 top-0 text-blue-600 text-5xl">Consistency</div>
+          </div>
+    
+        </div>
+    
+        <!-- Navigation Buttons -->
+        <button onclick="prevSlide()" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-3 py-2 rounded-full">❮</button>
+        <button onclick="nextSlide()" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-3 py-2 rounded-full">❯</button>
+      </div>
+    
+      <script>
+        const slider = document.getElementById('slider');
+        const totalSlides = slider.children.length;
+        let currentIndex = 0;
+    
+        function showSlide(index) {
+          slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+    
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          showSlide(currentIndex);
+        }
+    
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          showSlide(currentIndex);
+        }
+    
+        // Optional: Auto-play functionality
+       // setInterval(nextSlide, 5000); // Slide changes every 5 seconds
+      </script>
+      
+      <div class="bg-white py-24 sm:py-32" id="Partners">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <h1 class="text-center text-2xl font-semibold text-gray-900 left-0">BENEFACTOR BIGGEST SPONSORS</h1>
+          <div class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+            <!--Porsche-->
+            <a href="https://porsche.com">
+              <img src="https://logowik.com/content/uploads/images/porsche-new-20234989.logowik.com.webp"></a>
+              <!--Cloudfare-->
+            <a href="https://cloudfare.com">
+                 <img src="https://logowik.com/content/uploads/images/cloudflare.jpg/"></a>
+                <!--Microsoft-->
+            <a href="https://microsoft.com">
+                 <img src="https://logowik.com/content/uploads/images/microsoft-20123328.logowik.com.webp"></a>
+                  <!--Monster-->
+            <a href="https://www.monsterenergy.com/sk-sk/">
+                  <img src="https://logowik.com/content/uploads/images/308_monster_logo.jpg"></a>
+                    <!--Spotify-->
+            <a href="https://spotify.com">
+                  <img src="https://logowik.com/content/uploads/images/spotify-new-202427211.logowik.com.webp"></a>      
+                    <!--CrowdStrike-->
+            <a href="https://crowdstrike.com">
+                  <img src="https://logowik.com/content/uploads/images/crowdstrike-black153.logowik.com.webp"></a>
+                    <!--Intel-->
+            <a href="https://www.intel.com/content/www/us/en/homepage.html">
+                  <img src="https://logowik.com/content/uploads/images/intel-new-2020-blue6772.logowik.com.webp"></a>
+                    <!--Azure-->
+            <a href="https://azure.microsoft.com/en-us">
+                  <img src="https://logowik.com/content/uploads/images/azure-letter-a4462.logowik.com.webp"></a>
+                  <!--Visa-->
+            <a href="https://visa.de">
+                  <img src="https://logowik.com/content/uploads/images/visa-new-20215093.jpg"></a>
+                  <!--Pirelli-->
+            <a href="https://www.pirelli.com/global/en-ww/homepage/">
+                  <img src="https://logowik.com/content/uploads/images/pirelli-black378.logowik.com.webp"></a>  
+         </div>
+        </div>
+      </div>
+
+        <!--Footer-->
+  <footer class="bg-gray-800 text-gray-300 py-8" id="Footer">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Column 1 -->
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Benefactor</h2>
+          <ul class="space-y-2">
+            <li><a href="#About" class="hover:text-blue-600">About Us</a></li>
+            <li><a href="./carrers.html" class="hover:text-blue-600">Careers</a></li>
+            <li><a href="#" class="hover:text-blue-600">Automotive</a></li>
+            <li><a href="#Store" class="hover:text-blue-600">Store</a></li>
+          </ul>
+        </div>
+        <!-- Column 2 -->
+        <div class="absolute left-1/3">
+          <h2 class="text-lg font-semibold mb-4">Contact</h2>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-instagram fa-lg" style="color: #74C0FC;"></i>
+            Instagram</a></li>
+            <li><a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-youtube fa-lg" style="color: #74C0FC;"></i>
+            Youtube</a></li>
+            <li><a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-tiktok fa-lg" style="color: #74C0FC;"></i>
+            Tiktok</a></li>
+            <li><a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-linkedin fa-lg" style="color: #74C0FC;"></i>
+            LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+  
+            <div class="relative lg:w-2/3 top-10 left-0 justify-center">
+              <h2 class="text-4xl font-semibold tracking-tight text-white">Subscribe to our newsletter</h2>
+              <p class="mt-4 text-lg text-gray-300">To recieve news regarding our performances across the competition and sales in our store</p>
+              <div class="mt-6 flex max-w-md gap-x-4">
+                <label for="email-address" class="sr-only">Email address</label>
+                <input id="email-address" name="email" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" placeholder="Enter your email">
+                <button type="submit" class="flex-none rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+              </div>
+            </div>
+          </div>
+          
+      <!-- Bottom Row -->
+      <div class="mt-10 top-5 relative text-center text-sm text-gray-400">
+        &copy; 2024 Benefactor Group. All rights reserved. This website is made only for study purposes. Please do not take this web seriously.
+      </div>
+  </footer>
 </body>
 </html>
