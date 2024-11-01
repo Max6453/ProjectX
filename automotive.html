@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Benefactor Racing | Automotive</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="icon" href="./assets/benefactor-logo.jpg">
+    <link rel="stylesheet" href="./css/output.css">
+    <script src="https://kit.fontawesome.com/428684f03b.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+    <script src="./Components/main.jsx"></script>
+    <script src="./Components/navbar.jsx"></script>
+    <script src="./Components/store.jsx"></script>
+    <script src="./Components/slideshow.js"></script>
+    <script src="./Components/store-section.jsx"></script>
+    <script src="./Components/login.jsx"></script>
+    <script src="./Components/navCarrer.jsx"></script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NRHBD4Q');</script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        html{
+          scroll-behavior: smooth;
+        }
+        .slider {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
+        }
+        .slider-container {
+          overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="bg-blue-600 p-4 border-b border-white z-50" id="start">
+        <div class="container mx-auto flex justify-between items-center">
+          <div class="text-white text-lg cursor-pointer" onclick="window.location.reload()">
+            <img src="./assets/benefactor-logo.jpg" class=" w-10 lex rounded-md left-0">
+          </div>
+          <div class="hidden lg:block">
+            <ul class="flex space-x-6 pr-10 text-white text-xl">
+                    <li><a href="#Models" class="hover:text-cyan-400">Models</a></li>
+                    <li><a href="#Exp" class="hover:text-cyan-400">Experiences</a></li>
+                    <li><a href="#TD" class="hover:text-cyan-400">Trackside Days</a></li>
+                    <li><a href="#Ownerships" class="hover:text-cyan-400">Ownerships</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="menu" class="nav-menu max-h-0 overflow-hidden transition-max ease-in-out duration-300">
+        <ul class="flex flex-col p-4 space-y-2 bg-blue-600 text-white lg:hidden">
+            <li><a href="#Models" class="hover:text-cyan-400">Models</a></li>
+            <li><a href="#Exp" class="hover:text-cyan-400">Experiences</a></li>
+            <li><a href="#TD" class="hover:text-cyan-400">Trackside Days</a></li>
+            <li><a href="#Ownerships" class="hover:text-cyan-400">Ownerships</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const menu = document.getElementById('menu');
+    
+        menuButton.addEventListener('click', () => {
+            // Toggle the menu visibility
+            const isMenuOpen = menu.style.maxHeight;
+    
+            if (isMenuOpen) {
+                menu.style.maxHeight = null; // Close the menu
+            } else {
+                menu.style.maxHeight = menu.scrollHeight + "px"; // Open the menu
+            }
+        });
+    </script>
+
+    <!--End navbar-->
+
+      <!--SLIDER-->
+      <div class="slider-container relative w-full h-screen">
+        <!-- Slider Wrapper -->
+        <div id="slider" class="slider w-full h-full">
+    
+          <!-- Slide 1 -->
+          <div class="w-full h-full flex-shrink-0">
+            <img src="./assets/sunset-le-mans.png" alt="Slide 1" class="w-full h-full object-cover">
+            <div class="absolute py-6 m-6 mt-4 top-0 text-white font-light text-5xl">
+                <h3>Made to be winner</h3>
+                <h1>Benefactor LM87</h1>
+            </div>
+          </div>
+    
+          <!-- Slide 2 -->
+          <div class="w-full h-full flex-shrink-0">
+            <img src="./assets/B-schlagen.png" alt="Slide 2" class="w-full h-full object-cover">
+            <div class="absolute py-6 m-6 mt-4 top-0 text-white font-light text-5xl w-80 h-1">
+                <h3>performance balanced with aestetics</h3><br>
+                <h1>Benefactor Schlagen</h1>
+            </div>
+          </div>
+    
+          <!-- Slide 3 -->
+          <div class="w-full h-full flex-shrink-0">
+            <img src="./assets/dc88a6cc452d3209f0ca70c07c2f39831e971a5c.png" alt="Slide 3" class="w-full h-full object-cover">
+            <div class="absolute py-6 m-6 mt-4 top-0 text-white font-light text-5xl">
+                <h3>Legend on the road</h3><br>
+                <h1>Benefactor Schafter</h1>
+            </div>
+          </div>
+    
+          <!-- Slide 4 -->
+          <div class="w-full h-full flex-shrink-0">
+            <img src="./assets/e-motion.png" alt="Slide 4" class="w-full h-full object-cover">
+            <div class="absolute py-6 m-6 mt-4 top-0 text-white font-light text-5xl"></div>
+            <h3>First Supercar</h3>
+            <h1>Benefactor SM722</h1>
+          </div>
+        </div>
+        <!-- Navigation Buttons -->
+        <button onclick="prevSlide()" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-3 py-2 rounded-full">❮</button>
+        <button onclick="nextSlide()" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white px-3 py-2 rounded-full">❯</button>
+      </div>
+    
+      <script>
+        const slider = document.getElementById('slider');
+        const totalSlides = slider.children.length;
+        let currentIndex = 0;
+    
+        function showSlide(index) {
+          slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+    
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          showSlide(currentIndex);
+        }
+    
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          showSlide(currentIndex);
+        }
+    
+        // Optional: Auto-play functionality
+       // setInterval(nextSlide, 5000); // Slide changes every 5 seconds
+      </script>
+      <!--End Slider-->
+
+    <div>
+    <img class="h-auto w-full right-0" src="./assets/krieger-sport.png" alt="image description">
+    <div class="absolute top-full pt-32 pl-7 text-white font-light sm:text-xl md:text-4xl">
+        <h1>Welcome in new era of luxurious hypercars</h1>
+        <br>
+        <h2>history awaits...</h2>
+    </div>
+    </div>
+
+    <!--Experience-->
+    
+<div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32" id="About">
+    <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
+      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#71c4ff] to-[#0059ff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
+      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#71c4ff] to-[#0059ff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Overview</h2>
+        <p class="mb-3 pt-5 text-white dark:text-white first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-white dark:first-letter:text-white first-letter:me-3 first-letter:float-start">
+            
+Super-light engineering. Extreme power. Race-honed agility. We pour every drop of our expertise into our cars to give you the most thrilling driving experience imaginable. This is the full force of Benefactor
+        </p>
+        <p class="text-white dark:text-white">
+            Benefactor exists to create breathtaking performance road cars. And deliver the most thrilling driving experiences imaginable.
+
+            With innovation at the core of all we do, every challenge starts with the same question. How can we do it better? This restless spirit runs right through Benefactor. And the search for perfection is evident in everything we design.
+        </p><br>
+        <p class="text-white dark:text-white">
+        Pioneering new technology. Breaking industry norms. Pushing the envelope in speed, performance and dynamic engineering. This approach has created cars with astounding track performance that are astonishingly easy to drive on the road.
+        </p>
+      </div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 pt-16 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0">
+          <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Experiences</h2>
+          <p class="mb-3 pt-5 text-white dark:text-white first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-white dark:first-letter:text-white first-letter:me-3 first-letter:float-start">
+            The keys to a Benefactor don't just unlock one of the world's finest supercars – they open the door to a wide world of incredible, life-enhancing experiences.<br>
+
+            Become part of our family of passionate, discerning drivers, through Benefactor ownership or simply join one of our exclusive events.<br> 
+
+            Benefactor Experiences encompass every emotion, from the thrill of testing your limits driving the world's greatest race circuits to the awe of piloting a Benefactor on truly epic routes across the globe. We invite you to taste VIP luxury on our 5-star driving adventures or enjoy money-can't-buy hospitality at world-class motorsport events.<br>
+
+            Scroll down to view our current calendar of events. Time to explore with us…
+          </p>
+        </div>
+    </div>
+</div>
+
+    <!--Trackside Days-->
+<ul role="list" class="divide-y divide-gray-100 text-center pl-96">
+    <li class="flex justify-between gap-x-6 py-5 pl-40">
+      <div class="flex min-w-0 gap-x-4">
+        <div class="min-w-0 right-0 flex-auto">
+          <p class="text-sm/6 font-semibold text-gray-900">21.3.2025</p>
+          <p class="mt-1 truncate text-xs/5 text-gray-500">Hockenheimring testing with 992</p>
+        </div>
+      </div>
+    </li>
+    <li class="flex justify-between gap-x-6 py-5 pl-40">
+      <div class="flex min-w-0 gap-x-4">
+        <div class="min-w-0 flex-auto">
+          <p class="text-sm/6 font-semibold text-gray-900">2.4.2025</p>
+          <p class="mt-1 truncate text-xs/5 text-gray-500">Trackside Day - Nurburgring</p>
+        </div>
+      </div>
+
+    </li>
+    <li class="flex justify-between gap-x-6 py-5 pl-40">
+      <div class="flex min-w-0 gap-x-4">
+        <div class="min-w-0 flex-auto">
+          <p class="text-sm/6 font-semibold text-gray-900">8.4.2025</p>
+          <p class="mt-1 truncate text-xs/5 text-gray-500">Trackside Day - Hockenheimring</p>
+        </div>
+      </div>
+    </li>
+    <li class="flex justify-between gap-x-6 py-5 pl-40">
+      <div class="flex min-w-0 gap-x-4">
+        <div class="min-w-0 flex-auto">
+          <p class="text-sm/6 font-semibold text-gray-900">30.4.2025</p>
+          <p class="mt-1 truncate text-xs/5 text-gray-500">Spring Testing - Nurburgring</p>
+        </div>
+      </div>
+    </li>
+    <li class="flex justify-between gap-x-6 py-5 pl-40">
+      <div class="flex min-w-0 gap-x-4">
+        <div class="min-w-0 flex-auto">
+          <p class="text-sm/6 font-semibold text-gray-900">12.5.2025</p>
+          <p class="mt-1 truncate text-xs/5 text-gray-500">Porsche Experience - la Sarthe</p>
+        </div>
+      </div>
+    </li>
+    <li class="flex justify-between gap-x-6 py-5 pl-32">
+      <div class="flex min-w-0 gap-x-4">
+        <div class="min-w-0 flex-auto">
+          <p class="text-sm/6 font-semibold text-gray-900">1.6.2025</p>
+          <p class="mt-1 truncate text-xs/5 text-gray-500">Porsche Experience - Spa Francorchamps</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  
+
+  <!--Footer-->
+
+      <footer class="bg-gray-800 text-gray-300 py-8 text-xl" id="Footer">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Column 1 -->
+            <div>
+              <h2 class="text-lg font-semibold mb-4">Benefactor</h2>
+              <ul class="space-y-2">
+                <li><a href="./index.html" class="hover:text-blue-600">About Us</a></li>
+                <li><a href="./carrers.html" class="hover:text-blue-600">Careers</a></li>
+                <li><a href="./automotive.html" class="hover:text-blue-600">Automotive</a></li>
+                <li><a href="./index.html" class="hover:text-blue-600">Store</a></li>
+              </ul>
+            </div>
+            <!-- Column 2 -->
+            <div class="absolute left-1/3">
+              <h2 class="text-lg font-semibold mb-4">Contact</h2>
+              <ul class="space-y-2">
+                <li><a href="#" class="hover:text-blue-400">
+                  <i class="fa-brands fa-instagram fa-lg" style="color: #74C0FC;"></i>
+                Instagram</a></li>
+                <li><a href="#" class="hover:text-blue-400">
+                  <i class="fa-brands fa-youtube fa-lg" style="color: #74C0FC;"></i>
+                Youtube</a></li>
+                <li><a href="#" class="hover:text-blue-400">
+                  <i class="fa-brands fa-tiktok fa-lg" style="color: #74C0FC;"></i>
+                Tiktok</a></li>
+                <li><a href="#" class="hover:text-blue-400">
+                  <i class="fa-brands fa-linkedin fa-lg" style="color: #74C0FC;"></i>
+                LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+                <div class="relative lg:w-2/3 top-10 left-0 justify-center">
+                  <h2 class="text-4xl font-semibold tracking-tight text-white">Subscribe to our newsletter</h2>
+                  <p class="mt-4 text-lg text-gray-300">To recieve news regarding our performances across the competition and sales in our store</p>
+                  <div class="mt-6 flex max-w-md gap-x-4">
+                    <label for="email-address" class="sr-only">Email address</label>
+                    <input id="email-address" name="email" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" placeholder="Enter your email">
+                    <button type="submit" class="flex-none rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+                  </div>
+                </div>
+            </div>
+          <!-- Bottom Row -->
+          <div class="mt-10 top-5 relative text-center text-sm text-gray-400">
+            &copy; 2024 Benefactor Group. All rights reserved. This website is made only for study purposes. Please do not take this web seriously.
+          </div>
+      </footer>
+</body>
+</html>
