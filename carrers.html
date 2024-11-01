@@ -41,10 +41,11 @@
     </style>
 </head>
 <body>
-  <nav class="bg-blue-600 p-4">
+  <nav class="bg-blue-600 p-4" id="start">
     <div class="container mx-auto flex justify-between items-center">
       <div class="text-white text-lg cursor-pointer" onclick="window.location.reload()">
         <img src="./assets/benefactor-logo.jpg" class=" w-10 lex rounded-md left-0">
+        <p class=" text-5xl text-white absolute top-2 left-24">Benefactor</p>
       </div>
         <div class="block lg:hidden">
             <button id="menu-button" class="text-white focus:outline-none">
@@ -55,7 +56,7 @@
             </button>
         </div>
         <div class="hidden lg:block">
-            <ul class="flex space-x-4 text-white">
+            <ul class="flex space-x-6 pr-10 text-white text-xl">
                 <li><a href="#F1" class="hover:text-cyan-400">Formula 1</a></li>
                 <li><a href="#WEC" class="hover:text-cyan-400">WEC</a></li>
                 <li><a href="#GT" class="hover:text-cyan-400">GT</a></li>
@@ -141,9 +142,9 @@
               <p>
                 Motorsport is among the most competitive industries on the planet, where your best can always be better: an extra five per cent off the track could make the difference on it. Whether you work in the garage, the machine shop, on reception, or in marketing, you should never settle for anything less than excellence.  
 
-Why do we push ourselves? Because we love it, because we’re team players, and because there’s a job to be done. We achieve this through empowering and supporting one another and by striving for greatness every time we walk through our factory doors.  
+                Why do we push ourselves? Because we love it, because we’re team players, and because there’s a job to be done. We achieve this through empowering and supporting one another and by striving for greatness every time we walk through our factory doors.  
 
-We've built 60 years of history and we won’t be slowing down anytime soon. So, if you want to test your talent with the world watching, then you belong here, writing the next chapter in Benefactor’s racing history.
+                We've built 60 years of history and we won’t be slowing down anytime soon. So, if you want to test your talent with the world watching, then you belong here, writing the next chapter in Benefactor’s racing history.
               </p>
             </blockquote>
             <figcaption class="mt-10">
@@ -158,6 +159,8 @@ We've built 60 years of history and we won’t be slowing down anytime soon. So,
           </figure>
         </div>
       </section>
+
+      <!--SLIDER-->
 
       <div class="slider-container relative w-full h-screen">
         <!-- Slider Wrapper -->
@@ -178,7 +181,7 @@ We've built 60 years of history and we won’t be slowing down anytime soon. So,
           <!-- Slide 3 -->
           <div class="w-full h-full flex-shrink-0">
             <img src="./assets/B-schlagen.png" alt="Slide 3" class="w-full h-full object-cover">
-            <div class="absolute py-6 m-6 mt-4 top-0 text-blue-600 text-5xl">Expressive</div>
+            <div class="absolute py-6 m-6 mt-4 top-0 text-blue-600 text-5xl">Perfection</div>
           </div>
     
           <!-- Slide 4 -->
@@ -216,14 +219,16 @@ We've built 60 years of history and we won’t be slowing down anytime soon. So,
         // Optional: Auto-play functionality
        // setInterval(nextSlide, 5000); // Slide changes every 5 seconds
       </script>
-      
+
+      <!--Sponsors-->
+
       <div class="bg-white py-24 sm:py-32" id="Partners">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <h1 class="text-center text-2xl font-semibold text-gray-900 left-0">BENEFACTOR BIGGEST SPONSORS</h1>
+          <h1 class="text-center text-2xl font-semibold text-gray-900 left-0">BENEFACTOR GLOBAL SPONSORS</h1>
           <div class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-            <!--Porsche-->
-            <a href="https://porsche.com">
-              <img src="https://logowik.com/content/uploads/images/porsche-new-20234989.logowik.com.webp"></a>
+            <!--Tag Heuer-->
+              <a href="https://www.tagheuer.com/de/de/">
+                <img src="https://logowik.com/content/uploads/images/tag-heuer-with-wordmark1869.logowik.com.webp"></a>  
               <!--Cloudfare-->
             <a href="https://cloudfare.com">
                  <img src="https://logowik.com/content/uploads/images/cloudflare.jpg/"></a>
@@ -248,9 +253,30 @@ We've built 60 years of history and we won’t be slowing down anytime soon. So,
                   <!--Visa-->
             <a href="https://visa.de">
                   <img src="https://logowik.com/content/uploads/images/visa-new-20215093.jpg"></a>
-                  <!--Pirelli-->
+                  <!--Cisco-->
+            <a href="hhttps://www.cisco.com">
+                  <img src="https://logowik.com/content/uploads/images/cisco-systems9760.jpg"></a>               
+         </div>
+        </div>
+        <!--Suppliers-->
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-10">
+          <h1 class="text-center text-2xl font-semibold text-gray-900 left-0">BENEFACTOR OFFICIAL SUPPLIERS</h1>
+          <div class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+                  <!--Pirelli for F1/GT-->
             <a href="https://www.pirelli.com/global/en-ww/homepage/">
-                  <img src="https://logowik.com/content/uploads/images/pirelli-black378.logowik.com.webp"></a>  
+                  <img src="https://logowik.com/content/uploads/images/pirelli-black378.logowik.com.webp"></a>
+                  <!--Porsche-->
+            <a href="https://porsche.com">
+                  <img src="https://logowik.com/content/uploads/images/porsche-new-20234989.logowik.com.webp"></a>
+                  <!--Michellin for WEC-->
+            <a href="https://www.michelin.de/?utm_source=googleads&utm_medium=paidsearch&utm_campaign=16905920608&gad_source=1&gclid=CjwKCAjw-JG5BhBZEiwAt7JR66hMR0mpWdpdGE417hpMhMY76Izg6p1Oe4y3gQO8WqhaVZAikaZT-BoCQEIQAvD_BwE&gclsrc=aw.ds">
+                  <img src="https://logowik.com/content/uploads/images/michelin-banner6027.logowik.com.webp"></a> 
+                  <!--Brembo-->
+                  <a href="https://www.brembo.com/en">
+                    <img src="https://logowik.com/content/uploads/images/brembo-new-20226707.logowik.com.webp"></a>
+                  <!--Dallara-->
+                  <a href="https://www.dallarastradale.be">
+                    <img src="https://logowik.com/content/uploads/images/dallara7518.logowik.com.webp"></a>
          </div>
         </div>
       </div>
@@ -287,6 +313,10 @@ We've built 60 years of history and we won’t be slowing down anytime soon. So,
             LinkedIn</a></li>
           </ul>
         </div>
+        <button class=" right-0 fixed w-16 h-6 bottom-3 size-40">
+          <a href="#start">
+          <i class="fa-solid fa-arrow-up fa-2xl" style="color: #0080ff"></i></a>
+        </button>
       </div>
   
             <div class="relative lg:w-2/3 top-10 left-0 justify-center">
