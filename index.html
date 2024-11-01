@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Benefactor Racing | Official website</title>
+    <title>Benefactor Group</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="og:site_type" property="og:site_type" content="website" />
+    <meta name="og:title" property="og:title" content="Home" />
+
+    <meta name="og:url" property="og:url" content="https://max6453.github.io/ProjectX/" />
+    <meta property="og:image:width" content="2048">
+    <meta property="og:image:height" content="1152">
+    <meta name="twitter:card" content="summary" />
 
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="icon" href="./assets/benefactor-logo.jpg">
     <link rel="stylesheet" href="./css/output.css">
-     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+   <script src="https://cmp.osano.com/AzZu9oUSKmHuVDIp0/72a99fd4-572c-4148-ad71-1ce257224984/osano.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <script src="https://kit.fontawesome.com/428684f03b.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
     <script src="./Components/main.jsx"></script>
     <script src="./Components/navbar.jsx"></script>
     <script src="./Components/store.jsx"></script>
     <script src="./Components/slideshow.js"></script>
     <script src="./Components/store-section.jsx"></script>
     <script src="./Components/login.jsx"></script>
+    <script src="./main.js"></script>
 
 
 <!-- Google Tag Manager -->
@@ -26,755 +38,805 @@
     })(window,document,'script','dataLayer','GTM-NRHBD4Q');</script>
     <!-- End Google Tag Manager -->
 
-
-    <style>
-      html{
-        scroll-behavior: smooth;
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+      
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js");
+        });
       }
-        * {box-sizing: border-box}
-        body {font-family: Verdana, sans-serif; margin:0}
-        .mySlides {display: none}
-        img {vertical-align: middle;}
-        
-        /* Slideshow container */
-        .slideshow-container {
-          max-width: auto;
-          position: absolute;
-          right: 4rem;
-          margin: auto;
-        }
-        
-        /* Next & previous buttons */
-        .prev, .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          padding: 16px;
-          margin-top: -22px;
-          color: white;
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-        }
-        
-        /* Position the "next button" to the right */
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
-        
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-          background-color: rgba(0,0,0,0.8);
-        }
-        
-        /* Caption text */
-        .text {
-          color: #f2f2f2;
-          font-size: 15px;
-          padding: 8px 12px;
-          position: absolute;
-          bottom: 8px;
-          width: 100%;
-          text-align: center;
-        }
-        
-        /* Number text (1/3 etc) */
-        .numbertext {
-          color: #f2f2f2;
-          font-size: 12px;
-          padding: 8px 12px;
-          position: absolute;
-          top: 0;
-        }
-        
-        /* The dots/bullets/indicators */
-        .dot {
-          cursor: pointer;
-          height: 15px;
-          width: 15px;
-          margin: 0 2px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.6s ease;
-        }
-        
-        .active, .dot:hover {
-          background-color: #717171;
-        }
-        
-        /* Fading animation */
-        .fade {
-          animation-name: fade;
-          animation-duration: 1.5s;
-        }
-        
-        @keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-        
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-          .prev, .next,.text {font-size: 11px}
-        }
-    </style>
-</head>
-<body>
+      </script>
 
-    <button class=" right-0 fixed w-16 h-6 bottom-3 size-40 animate-bounce">
-      <a href="#start">
-      <i class="fa-solid fa-arrow-up fa-2xl" style="color: #0026ff"></i></a>
-    </button>
-
-  <!--Navbar-->
-
-  <nav class="bg-blue-600 p-4" id="start">
-    <div class="container mx-auto flex justify-between items-center">
-        <div class="text-white text-lg cursor-pointer" onclick="window.location.reload()">
-          <img src="./assets/benefactor-logo.jpg" class=" w-10 lex rounded-md left-0">
-        </div>
-        <div class="block lg:hidden">
-            <button id="menu-button" class="text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="hidden lg:block">
-            <ul class="flex space-x-4 text-white ">
-                <li><a href="#About" class="hover:text-cyan-300">About us</a></li>
-                <li><a href="./carrers.html" class="hover:text-cyan-300">Carrers</a></li>
-                <li><a href="#" class="hover:text-cyan-300">Automotive</a></li>
-                <li><a href="#Store" class="hover:text-cyan-300">Store</a></li>
-                <li><a href="#Footer" class="hover:text-cyan-300">Where to find us</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div id="menu" class="nav-menu max-h-0 overflow-hidden transition-max ease-in-out duration-300">
-    <ul class="flex flex-col p-4 space-y-2 bg-blue-600 text-white lg:hidden">
-        <li><a href="#About" class="hover:text-cyan-300">About us</a></li>
-        <li><a href="./carrers.html" class="hover:text-cyan-300">Carrers</a></li>
-        <li><a href="#" class="hover:text-cyan-300">Automotive</a></li>
-        <li><a href="#Store" class="hover:text-cyan-300">Store</a></li>
-        <li><a href="#Footer" class="hover:text-cyan-300">Where to find us</a></li>
-    </ul>
-</div>
-
-<script>
-    const menuButton = document.getElementById('menu-button');
-    const menu = document.getElementById('menu');
-
-    menuButton.addEventListener('click', () => {
-        // Toggle the menu visibility
-        const isMenuOpen = menu.style.maxHeight;
-
-        if (isMenuOpen) {
-            menu.style.maxHeight = null; // Close the menu
-        } else {
-            menu.style.maxHeight = menu.scrollHeight + "px"; // Open the menu
+      <style>
+        html{
+          scroll-behavior: smooth;
         }
-    });
-</script>
-  <!-- End Navbar-->
-  
-   <!--First Section-->
-   <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32" id="About">
-    <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
-      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#71c4ff] to-[#0059ff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
-    <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
-      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#71c4ff] to-[#0059ff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Who We Are?</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-300">
-          Benefactor’s vision is to be the world’s most desirable, ultra-luxury British brand, creating the most exquisitely addictive performance cars.
-          <br>
-          Founded in 1913 by brothers Jonathan and Robert Benefactor, benefactor is acknowledged as an iconic global brand synonymous with style, luxury, performance, and exclusivity. benefactor fuses the latest technology, time honoured craftsmanship and beautiful styling to produce a range of critically acclaimed luxury models including the Vantage, DB11, DBS and DBX and its first hypercar, the Benefactor Valkyrie.
-          <br>
-          Based in Gaydon, England, Aston Martin Lagonda designs, creates and exports cars which are sold in 55 countries around the world. Its sports cars are manufactured in Gaydon with its luxury DBX SUV range proudly manufactured in St Athan, Wales.
-          <br>
-          Lagonda was founded in 1899 and Benefactor in 1913. The two brands came together in 1947 when both were purchased by the late Sir David Brown, and the company is now listed on the London Stock Exchange as Benefactor Lagonda Global Holdings plc.
-          <br>
-          2020 saw Maxim Harvančík become the company’s Executive Chairman, alongside significant new investment, a move that led to Benefactor’s return to the pinnacle of motorsport with the Benefactor Formula One™ Team and commenced new era for the iconic British marque.   
-        </p>
-      </div>
-      <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-        <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-          <a href="./carrers.html" class="hover:text-cyan-400">Vacant positions<span aria-hidden="true">&rarr;</span></a>
-          <a href="./carrers.html" class="hover:text-cyan-400">Internship program <span aria-hidden="true">&rarr;</span></a>
-          <a href="#" class="hover:text-cyan-400">Our passion<span aria-hidden="true">&rarr;</span></a>
-          <a href="#" class="hover:text-cyan-400">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
-        </div>
-        <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">F1 Constructors’ championships</dt>
-            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">12</dd>
-          </div>
-          <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">Formula 1 Drivers Championships</dt>
-            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">14</dd>
-          </div>
-          <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">Across all departments</dt>
-            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">1200</dd>
-          </div>
-          <div class="flex flex-col-reverse">
-            <dt class="text-base leading-7 text-gray-300">24 hours of Le'Mans victories</dt>
-            <dd class="text-2xl font-bold leading-9 tracking-tight text-white">4</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </div>
-  <!--End First section-->
-
-
-  <!--SECOND SECTION-->
-
-    <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-      <div class="absolute inset-0 -z-10 overflow-hidden">
-        <svg class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#70c1ff] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" aria-hidden="true">
-          <defs>
-            <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
-              <path d="M100 200V.5M.5 .5H200" fill="none" />
-            </pattern>
-          </defs>
-          <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-            <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
-          </svg>
-          <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
-        </svg>
-      </div>
-      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-        <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-          <div class="lg:pr-4">
-            <div class="lg:max-w-lg">
-              <p class="text-base font-semibold leading-7 text-indigo-600">About our team</p>
-              <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Heritage</h1>
-              <p class="mt-6 text-xl leading-8 text-gray-700">
-                Formula One is a sport like no other. Combining elite teamwork, cutting-edge technologies and innovation, high-performance management and exceptional driving skill, teams develop race cars capable of competing against their rivals in a high-octane environment that spans upwards of 20 races across five continents throughout each season.
-                <br>
-                Benefactor Group, based across Technology Centres at Brighton and hove in the United Kingdom, brings together over 850 dedicated and determined people that design, develop, manufacture and race the cars driven by 5 time grand prix winner Charles Leclerc and formula 1 winner Lando Norris.
-                <br>
-                Winning four consecutive double Drivers’ and Constructors’ World Championships from 1990 to 1994 and securing fourth consecutive Constructors’ Championship success in 1994, the Team is one of the most successful in the sport’s history.
+          * {box-sizing: border-box}
+          body {font-family: Verdana, sans-serif; margin:0}
+          .mySlides {display: none}
+          img {vertical-align: middle;}
+          
+          /* Slideshow container */
+          .slideshow-container {
+            max-width: auto;
+            position: absolute;
+            right: 4rem;
+            margin: auto;
+          }
+          
+          /* Next & previous buttons */
+          .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+          }
+          
+          /* Position the "next button" to the right */
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
+          
+          /* On hover, add a black background color with a little bit see-through */
+          .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+          }
+          
+          /* Caption text */
+          .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+          }
+          
+          /* Number text (1/3 etc) */
+          .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+          }
+          
+          /* The dots/bullets/indicators */
+          .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
+          
+          .active, .dot:hover {
+            background-color: #717171;
+          }
+          
+          /* Fading animation */
+          .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+          }
+          
+          @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+          }
+          
+          /* On smaller screens, decrease text size */
+          @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+          }
+      </style>
+  </head>
+  <body>
+    <!--Consent window-->
+<!-- Main modal -->
+<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Important Notes
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    This website is made by student and shouldn't be taken seriuosly.
+                </p>
+                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    Whole Benefactor brand and all associated websites are fictive and it's content was taken or inspired from <a href="https://www.mclaren.com" class=" text-yellow-400">mclaren website</a>, <a href="https://www.astonmartin.com/en" class="text-green-600">Aston martin webite</a>,
+                    <a href="https://flowbite.com/docs/components/modal/" class="text-blue-600">flowbite components</a> and <a href="https://tailwindui.com/components" class="text-indigo-600">Tailwindcss components</a>
                 </p>
             </div>
-          </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
+            </div>
         </div>
-        <!--Slider-->
-        <!--
-      <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-          <img class="w-[12rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="./assets/Le-mans.jpg" alt="">
-        </div>-->
+    </div>
+</div>
+    <!--End Consetn window-->
 
-
-
-        <!--End slider-->
-
-        <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-          <div class="lg:pr-4">
-            <div class="max-w-xl text-xl leading-8 text-gray-700 lg:max-w-lg">
-              <p>
-                Benefactors Heritage is the home of the history made by Benefactor Grand Prix Engineering across nearly 30 years of Formula 1 racing. We own and operate some of the finest F1 machinery in the world, lovingly maintained by our skilled mechanics and engineers. And we make our fleet of iconic cars available for private ownership and participation in historic racing events, allowing collectors, drivers and enthusiasts the chance to own and create their own piece of Benefactor history.
-                <br>
-                Our passion for preserving and bringing to life Benefactor’ heritage means we are able to offer a unique investment and ownership experience for collectors. We guarantee the crucial authenticity and provenance of the cars, restore and service them using original or approved custom-made parts in the hands of mechanics and engineers who ran the cars at the time, and bring owners together for exclusive events and track days at legendary circuits.
-                <br>
-                Find out more about how Benefactor Heritage curates and cares for our enduring legacy. 
-              </p>
+      <button class=" right-0 fixed w-16 h-6 bottom-3 size-40 animate-bounce">
+        <a href="#start">
+        <i class="fa-solid fa-arrow-up fa-2xl" style="color: #0026ff"></i></a>
+      </button>
+  
+    <!--Navbar-->
+  
+    <nav class="bg-blue-600 p-4" id="start">
+      <div class="container mx-auto flex justify-between items-center">
+          <div class="text-white text-lg cursor-pointer" onclick="window.location.reload()">
+            <img src="./assets/benefactor-logo.jpg" class=" w-10 lex rounded-md left-0">
+          </div>
+              <!-- Modal toggle -->
+          <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-black bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+          Read before visiting
+          </button>
+          <div class="block lg:hidden">
+              <button id="menu-button" class="text-white focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16m-7 6h7"></path>
+                  </svg>
+              </button>
+          </div>
+          <div class="hidden lg:block">
+              <ul class="flex space-x-4 text-white text-2xl">
+                  <li><a href="#About" class="hover:text-cyan-300">About us</a></li>
+                  <li><a href="./carrers.html" class="hover:text-cyan-300">Carrers</a></li>
+                  <li><a href="./automotive.html" class="hover:text-cyan-300">Automotive</a></li>
+                  <li><a href="#Store" class="hover:text-cyan-300">Store</a></li>
+                  <li><a href="#Footer" class="hover:text-cyan-300">Where to find us</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <div id="menu" class="nav-menu max-h-0 overflow-hidden transition-max ease-in-out duration-300">
+      <ul class="flex flex-col p-4 space-y-2 bg-blue-600 text-white lg:hidden">
+          <li><a href="#About" class="hover:text-cyan-300">About us</a></li>
+          <li><a href="./carrers.html" class="hover:text-cyan-300">Carrers</a></li>
+          <li><a href="./automotive.html" class="hover:text-cyan-300">Automotive</a></li>
+          <li><a href="#Store" class="hover:text-cyan-300">Store</a></li>
+          <li><a href="#Footer" class="hover:text-cyan-300">Contact</a></li>
+      </ul>
+  </div>
+  
+  <script>
+      const menuButton = document.getElementById('menu-button');
+      const menu = document.getElementById('menu');
+  
+      menuButton.addEventListener('click', () => {
+          // Toggle the menu visibility
+          const isMenuOpen = menu.style.maxHeight;
+  
+          if (isMenuOpen) {
+              menu.style.maxHeight = null; // Close the menu
+          } else {
+              menu.style.maxHeight = menu.scrollHeight + "px"; // Open the menu
+          }
+      });
+  </script>
+    <!-- End Navbar-->
+    
+     <!--First Section-->
+     <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32" id="About">
+      <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
+        <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#71c4ff] to-[#0059ff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      </div>
+      <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
+        <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#71c4ff] to-[#0059ff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      </div>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0">
+          <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Who We Are?</h2>
+          <p class="mt-6 text-lg leading-8 text-gray-300">
+            Benefactor’s vision is to be the world’s most desirable, ultra-luxury British brand, creating the most exquisitely addictive performance cars.
+            <br>
+            Founded in 1913 by brothers Jonathan and Robert Benefactor, benefactor is acknowledged as an iconic global brand synonymous with style, luxury, performance, and exclusivity. benefactor fuses the latest technology, time honoured craftsmanship and beautiful styling to produce a range of critically acclaimed luxury models including the Vantage, DB11, DBS and DBX and its first hypercar, the Benefactor Valkyrie.
+            <br>
+            Based in Gaydon, England, Aston Martin Lagonda designs, creates and exports cars which are sold in 55 countries around the world. Its sports cars are manufactured in Gaydon with its luxury DBX SUV range proudly manufactured in St Athan, Wales.
+            <br>
+            Lagonda was founded in 1899 and Benefactor in 1913. The two brands came together in 1947 when both were purchased by the late Sir David Brown, and the company is now listed on the London Stock Exchange as Benefactor Lagonda Global Holdings plc.
+            <br>
+            2020 saw Maxim Harvančík become the company’s Executive Chairman, alongside significant new investment, a move that led to Benefactor’s return to the pinnacle of motorsport with the Benefactor Formula One™ Team and commenced new era for the iconic British marque.   
+          </p>
+        </div>
+        <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+          <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+            <a href="./carrers.html" class="hover:text-cyan-400">Vacant positions<span aria-hidden="true">&rarr;</span></a>
+            <a href="./carrers.html" class="hover:text-cyan-400">Internship program <span aria-hidden="true">&rarr;</span></a>
+            <a href="#" class="hover:text-cyan-400">Our passion<span aria-hidden="true">&rarr;</span></a>
+            <a href="#" class="hover:text-cyan-400">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="flex flex-col-reverse">
+              <dt class="text-base leading-7 text-gray-300">F1 Constructors’ championships</dt>
+              <dd class="text-2xl font-bold leading-9 tracking-tight text-white">12</dd>
+            </div>
+            <div class="flex flex-col-reverse">
+              <dt class="text-base leading-7 text-gray-300">Formula 1 Drivers Championships</dt>
+              <dd class="text-2xl font-bold leading-9 tracking-tight text-white">14</dd>
+            </div>
+            <div class="flex flex-col-reverse">
+              <dt class="text-base leading-7 text-gray-300">Across all departments</dt>
+              <dd class="text-2xl font-bold leading-9 tracking-tight text-white">1200</dd>
+            </div>
+            <div class="flex flex-col-reverse">
+              <dt class="text-base leading-7 text-gray-300">24 hours of Le'Mans victories</dt>
+              <dd class="text-2xl font-bold leading-9 tracking-tight text-white">4</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <!--End First section-->
+  
+  
+    <!--SECOND SECTION-->
+  
+      <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+          <svg class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#70c1ff] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" aria-hidden="true">
+            <defs>
+              <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                <path d="M100 200V.5M.5 .5H200" fill="none" />
+              </pattern>
+            </defs>
+            <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+              <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
+            </svg>
+            <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+          </svg>
+        </div>
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+          <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div class="lg:pr-4">
+              <div class="lg:max-w-lg">
+                <p class="text-base font-semibold leading-7 text-indigo-600">About our team</p>
+                <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Heritage</h1>
+                <p class="mt-6 text-xl leading-8 text-gray-700">
+                  Formula One is a sport like no other. Combining elite teamwork, cutting-edge technologies and innovation, high-performance management and exceptional driving skill, teams develop race cars capable of competing against their rivals in a high-octane environment that spans upwards of 20 races across five continents throughout each season.
+                  <br>
+                  Benefactor Group, based across Technology Centres at Brighton and hove in the United Kingdom, brings together over 850 dedicated and determined people that design, develop, manufacture and race the cars driven by 5 time grand prix winner Charles Leclerc and formula 1 winner Lando Norris.
+                  <br>
+                  Winning four consecutive double Drivers’ and Constructors’ World Championships from 1990 to 1994 and securing fourth consecutive Constructors’ Championship success in 1994, the Team is one of the most successful in the sport’s history.
+                  </p>
+              </div>
+            </div>
+          </div>
+          <!--Slider-->
+          <!--
+        <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <img class="w-[12rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="./assets/Le-mans.jpg" alt="">
+          </div>-->
+  
+  
+  
+          <!--End slider-->
+  
+          <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div class="lg:pr-4">
+              <div class="max-w-xl text-xl leading-8 text-gray-700 lg:max-w-lg">
+                <p>
+                  Benefactors Heritage is the home of the history made by Benefactor Grand Prix Engineering across nearly 30 years of Formula 1 racing. We own and operate some of the finest F1 machinery in the world, lovingly maintained by our skilled mechanics and engineers. And we make our fleet of iconic cars available for private ownership and participation in historic racing events, allowing collectors, drivers and enthusiasts the chance to own and create their own piece of Benefactor history.
+                  <br>
+                  Our passion for preserving and bringing to life Benefactor’ heritage means we are able to offer a unique investment and ownership experience for collectors. We guarantee the crucial authenticity and provenance of the cars, restore and service them using original or approved custom-made parts in the hands of mechanics and engineers who ran the cars at the time, and bring owners together for exclusive events and track days at legendary circuits.
+                  <br>
+                  Find out more about how Benefactor Heritage curates and cares for our enduring legacy. 
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  <!--End Second section-->
-
-
-  <!--STORE SECTION-->
-
-                  <div class="left-1/2 justify-center items-center inline-flex"  id="Store"> 
-                    <h1 class="text-4xl font-bold tracking-tight m-14 left-1/2 relative top-3/4 text-black sm:text-6xl">Store</h1>
-                  </div>
-
-                  <header class="relative bg-blue-00 ">
-                    <p class="flex items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">Get free delivery on orders over $100</p>
-
-                    <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                      <div class="border-b border-gray-200">
-                        <div class="flex h-16 items-center">
-
-                          <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state.
-                           Add JS ASAP  -->
-                         <!-- <button type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
-                            <span class="absolute -inset-0.5"></span>
-                            <span class="sr-only">Open menu</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                          </button>-->
-                          <!-- Logo -->
-                          <div class="ml-4 flex lg:ml-0">
-                            <a href="#">
-                              <span class="sr-only">Your Company</span>
-                              <img class="h-8 w-auto" src="./assets/benefactor-logo.jpg" alt="">
-                            </a>
-                          </div>
-
-                          <!-- Flyout menus -->
-                          <div class="hidden lg:ml-8 lg:block lg:self-stretch">
-                            <div class="flex h-full space-x-8">
-                              <div class="flex">
-                                <div class="relative flex">
-                                  <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
-                                  <button type="button" class="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800" aria-expanded="false">Women</button>
-                                </div>
-
-                                <!--
-                                  'Women' flyout menu, show/hide based on flyout menu state.
-
-                                  Entering: "transition ease-out duration-200"
-                                    From: "opacity-0"
-                                    To: "opacity-100"
-                                  Leaving: "transition ease-in duration-150"
-                                    From: "opacity-100"
-                                    To: "opacity-0"
-                                -->
-                                <div class="absolute inset-x-0 top-full text-sm text-gray-500">
-                                  <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                                  <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
-
-
-                                </div>
-                              </div>
-                              <div class="flex">
-                                <div class="relative flex">
-                                  <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
-                                  <button type="button" class="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800" aria-expanded="false">Men</button>
-                                </div>
-
-                                <!--
-                                  'Men' flyout menu, show/hide based on flyout menu state.
-
-                                  Entering: "transition ease-out duration-200"
-                                    From: "opacity-0"
-                                    To: "opacity-100"
-                                  Leaving: "transition ease-in duration-150"
-                                    From: "opacity-100"
-                                    To: "opacity-0"
-                                -->
-                              </div>
-                              <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
-                              <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
-                            </div>
-                          </div>
-
-<!--Hidden mobile menu in store-->
-
-                          <div class="ml-auto flex items-center">
-                            <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                              <a href="./login.html" target="_blank" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
-                              <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                              <a href="./create-a-acount.html" target="_blank" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
-                            </div>
-
-                            <div class="hidden lg:ml-8 lg:flex">
-                              <a href="#" class="flex items-center text-gray-700 hover:text-gray-800">
-                                <img src="https://tailwindui.com/plus/img/flags/flag-canada.svg" alt="" class="block h-auto w-5 flex-shrink-0">
-                                <span class="ml-3 block text-sm font-medium">CAD</span>
-                                <span class="sr-only">, change currency</span>
-                              </a>
-                            </div>
-
-                            <!-- Search -->
-                            <div class="flex lg:ml-6">
-                              <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
-                                <span class="sr-only">Search</span>
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                                </svg>
-                              </a>
-                            </div>
-
-                            <!-- Cart -->
-                            <div class="ml-4 flow-root lg:ml-6">
-                              <a href="#" class="group -m-2 flex items-center p-2">
-                                <svg class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                                </svg>
-                                <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
-                                <span class="sr-only">items in cart, view bag</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </nav>
-                  </header> 
-
-
-                  <div class="bg-gradient-to-tr from-[#ffffff] to-[#0091ff] opacity-1000">
-                    <div class="pt-6">
-                      <nav aria-label="Breadcrumb">
-                        <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-                          <li>
-                            <div class="flex items-center">
-                              <a href="#" class="mr-2 text-sm font-medium text-gray-900">Men</a>
-                              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-                                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+    <!--End Second section-->
+  
+  
+    <!--STORE SECTION-->
+  
+                    <div class="left-1/2 justify-center items-center inline-flex"  id="Store"> 
+                      <h1 class="text-4xl font-bold tracking-tight m-14 left-1/2 relative top-3/4 text-black sm:text-6xl">Store</h1>
+                    </div>
+  
+                    <header class="relative bg-blue-00 ">
+                      <p class="flex items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">Get free delivery on orders over $100</p>
+  
+                      <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div class="border-b border-gray-200">
+                          <div class="flex h-16 items-center">
+  
+                            <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state.
+                             Add JS ASAP  -->
+                           <!-- <button type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
+                              <span class="absolute -inset-0.5"></span>
+                              <span class="sr-only">Open menu</span>
+                              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                               </svg>
+                            </button>-->
+                            <!-- Logo -->
+                            <div class="ml-4 flex lg:ml-0">
+                              <a href="#">
+                                <span class="sr-only">Your Company</span>
+                                <img class="h-8 w-auto" src="./assets/benefactor-logo.jpg" alt="">
+                              </a>
                             </div>
-                          </li>
-                          <li>
-                            <div class="flex items-center">
-                              <a href="#" class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
-                              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-                                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                              </svg>
-                            </div>
-                          </li>
-                  
-                          <li class="text-sm">
-                            <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
-                          </li>
-                        </ol>
-                      </nav>
-                  
-                      <!-- Image gallery -->
-                      <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-                        <div class="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
-                          <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="h-full w-full object-cover object-center">
-                        </div>
-                        <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-                          <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-                            <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
-                          </div>
-                          <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-                            <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="h-full w-full object-cover object-center">
-                          </div>
-                        </div>
-                        <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-                          <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
-                        </div>
-                      </div>
-                  
-                      <!-- Product info -->
-<div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
-<div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Basic Tee 6-Pack</h1>
-</div>
-                                
-                        <!-- Options -->
-              <div class="mt-4 lg:row-span-3 lg:mt-0">
-              <h2 class="sr-only">Product information</h2>
-              <p class="text-3xl tracking-tight text-gray-900">$192</p>
-                                
-                          <!-- Reviews -->
-                                                <div class="mt-6">
-                                                <h3 class="sr-only">Reviews</h3>
-                                                <div class="flex items-center">
-                                                <div class="flex items-center">
-                                                <!-- Active: "text-gray-900", Default: "text-gray-200" -->
-                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                                                </svg>
-                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                                                </svg>
-                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                                                </svg>
-                                              <svg class="h-5 w-5 flex-shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                                              </svg>
-                                              <svg class="h-5 w-5 flex-shrink-0 text-gray-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
-                                              </svg>
-                                            </div>
-                                            <p class="sr-only">4 out of 5 stars</p>
-                                            <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
-                                          </div>
-                                        </div>
-                                
-                                        <form class="mt-10">
-                                          <!-- Colors -->
-                                          <div>
-                                            <h3 class="text-sm font-medium text-gray-900">Color</h3>
-                                
-                                            <fieldset aria-label="Choose a color" class="mt-4">
-                                              <div class="flex items-center space-x-3">
-                                                <!-- Active and Checked: "ring ring-offset-1" -->
-                                                <label aria-label="White" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
-                                                  <input type="radio" name="color-choice" value="Black" class="sr-only">
-                                                  <span aria-hidden="true" class="h-8 w-8 rounded-full border border-black border-opacity-10 bg-black"></span>
-                                                </label>
-                                                <!-- Active and Checked: "ring ring-offset-1" -->
-                                                <label aria-label="Gray" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
-                                                  <input type="radio" name="color-choice" value="Blue" class="sr-only">
-                                                  <span aria-hidden="true" class="h-8 w-8 rounded-full border border-black border-opacity-10 bg-blue-600"></span>
-                                                </label>
-                                                <!-- Active and Checked: "ring ring-offset-1" -->
-                                                <label aria-label="Black" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-900 focus:outline-none">
-                                                  <input type="radio" name="color-choice" value="White" class="sr-only">
-                                                  <span aria-hidden="true" class="h-8 w-8 rounded-full border border-black border-opacity-10 bg-white"></span>
-                                                </label>
-                                              </div>
-                                            </fieldset>
-                                          </div>
-                                
-                                          <!-- Sizes -->
-                                          <div class="mt-10">
-                                            <div class="flex items-center justify-between">
-                                              <h3 class="text-sm font-medium text-gray-900">Size</h3>
-                                              <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
-                                            </div>
-                                
-                                            <fieldset aria-label="Choose a size" class="mt-4">
-                                              <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
-                                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                                <label class="group relative flex cursor-not-allowed items-center justify-center rounded-md border bg-gray-50 px-4 py-3 text-sm font-medium uppercase text-gray-200 hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
-                                                  <input type="radio" name="size-choice" value="XXS" disabled class="sr-only">
-                                                  <span>XXS</span>
-                                                  <span aria-hidden="true" class="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200">
-                                                    <svg class="absolute inset-0 h-full w-full stroke-2 text-gray-200" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                                                      <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
-                                                    </svg>
-                                                  </span>
-                                                </label>
-                                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                                <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
-                                                  <input type="radio" name="size-choice" value="XS" class="sr-only">
-                                                  <span>XS</span>
-                                                  <!--
-                                                    Active: "border", Not Active: "border-2"
-                                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                                  -->
-                                                  <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                                                </label>
-                                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                                <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
-                                                  <input type="radio" name="size-choice" value="S" class="sr-only">
-                                                  <span>S</span>
-                                                  <!--
-                                                    Active: "border", Not Active: "border-2"
-                                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                                  -->
-                                                  <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                                                </label>
-                                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                                <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
-                                                  <input type="radio" name="size-choice" value="M" class="sr-only">
-                                                  <span>M</span>
-                                                  <!--
-                                                    Active: "border", Not Active: "border-2"
-                                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                                  -->
-                                                  <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                                                </label>
-                                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                                <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
-                                                  <input type="radio" name="size-choice" value="L" class="sr-only">
-                                                  <span>L</span>
-                                                  <!--
-                                                    Active: "border", Not Active: "border-2"
-                                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                                  -->
-                                                  <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                                                </label>
-                                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                                <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
-                                                  <input type="radio" name="size-choice" value="XL" class="sr-only">
-                                                  <span>XL</span>
-                                                  <!--
-                                                    Active: "border", Not Active: "border-2"
-                                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                                  -->
-                                                  <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                                                </label>
-                                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                                <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
-                                                  <input type="radio" name="size-choice" value="2XL" class="sr-only">
-                                                  <span>2XL</span>
-                                                  <!--
-                                                    Active: "border", Not Active: "border-2"
-                                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                                  -->
-                                                  <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                                                </label>
-                                                <!-- Active: "ring-2 ring-indigo-500" -->
-                                                <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
-                                                  <input type="radio" name="size-choice" value="3XL" class="sr-only">
-                                                  <span>3XL</span>
-                                                  <!--
-                                                    Active: "border", Not Active: "border-2"
-                                                    Checked: "border-indigo-500", Not Checked: "border-transparent"
-                                                  -->
-                                                  <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
-                                                </label>
-                                              </div>
-                                            </fieldset>
-                                          </div>
-                                
-                                          <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to bag</button>
-                                        </form>
-                                      </div>
-                                
-                                      <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
-                                        <!-- Description and details -->
-                                        <div>
-                                          <h3 class="sr-only">Description</h3>
-                                
-                                          <div class="space-y-6">
-                                            <p class="text-base text-gray-900">The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: &quot;Black&quot;. Need to add an extra pop of color to your outfit? Our white tee has you covered.</p>
-                                          </div>
-                                        </div>
-                                
-                                        <div class="mt-10">
-                                          <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
-                                
-                                          <div class="mt-4">
-                                            <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
-                                              <li class="text-gray-400"><span class="text-gray-600">Hand cut and sewn locally</span></li>
-                                              <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
-                                              <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-                                              <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                
-                                        <div class="mt-10">
-                                          <h2 class="text-sm font-medium text-gray-900">Details</h2>
-                                          <div class="mt-4 space-y-6">
-                                            <p class="text-sm text-gray-600">The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming &quot;Charcoal Gray&quot; limited release.</p>
-                                          </div>
-                                        </div>
-                                      </div>
+  
+                            <!-- Flyout menus -->
+                            <div class="hidden lg:ml-8 lg:block lg:self-stretch">
+                              <div class="flex h-full space-x-8">
+                                <div class="flex">
+                                  <div class="relative flex">
+                                    <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
+                                    <button type="button" class="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800" aria-expanded="false">Women</button>
+                                  </div>
+  
+                                  <!--
+                                    'Women' flyout menu, show/hide based on flyout menu state.
+  
+                                    Entering: "transition ease-out duration-200"
+                                      From: "opacity-0"
+                                      To: "opacity-100"
+                                    Leaving: "transition ease-in duration-150"
+                                      From: "opacity-100"
+                                      To: "opacity-0"
+                                  -->
+                                  <div class="absolute inset-x-0 top-full text-sm text-gray-500">
+                                    <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
+                                    <div class="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true"></div>
+  
+  
                                   </div>
                                 </div>
-
-
-                    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                      <h2 class="sr-only">Products</h2>
-                  
-                      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                        <a href="#" class="group">
-                          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./assets/black-tahirt.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                <div class="flex">
+                                  <div class="relative flex">
+                                    <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" -->
+                                    <button type="button" class="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800" aria-expanded="false">Men</button>
+                                  </div>
+  
+                                  <!--
+                                    'Men' flyout menu, show/hide based on flyout menu state.
+  
+                                    Entering: "transition ease-out duration-200"
+                                      From: "opacity-0"
+                                      To: "opacity-100"
+                                    Leaving: "transition ease-in duration-150"
+                                      From: "opacity-100"
+                                      To: "opacity-0"
+                                  -->
+                                </div>
+                                <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
+                                <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
+                              </div>
+                            </div>
+  
+  <!--Hidden mobile menu in store-->
+  
+                            <div class="ml-auto flex items-center">
+                              <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                                <a href="./login.html" target="_blank" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+                                <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                                <a href="./create-a-acount.html" target="_blank" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
+                              </div>
+  
+                              <div class="hidden lg:ml-8 lg:flex">
+                                <a href="#" class="flex items-center text-gray-700 hover:text-gray-800">
+                                  <img src="https://tailwindui.com/plus/img/flags/flag-canada.svg" alt="" class="block h-auto w-5 flex-shrink-0">
+                                  <span class="ml-3 block text-sm font-medium">CAD</span>
+                                  <span class="sr-only">, change currency</span>
+                                </a>
+                              </div>
+  
+                              <!-- Search -->
+                              <div class="flex lg:ml-6">
+                                <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+                                  <span class="sr-only">Search</span>
+                                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                  </svg>
+                                </a>
+                              </div>
+  
+                              <!-- Cart -->
+                              <div class="ml-4 flow-root lg:ml-6">
+                                <a href="#" class="group -m-2 flex items-center p-2">
+                                  <svg class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                                  </svg>
+                                  <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                                  <span class="sr-only">items in cart, view bag</span>
+                                </a>
+                              </div>
+                            </div>
                           </div>
-                          <h3 class="mt-4 text-sm text-gray-700">Black Shirt</h3>
-                          <p class="mt-1 text-lg font-medium text-gray-900">$30</p>
-                        </a>
-                        <a href="#" class="group">
-                          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./assets/Blue-Tshirt.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                      </nav>
+                    </header> 
+  
+  
+                    <div class="bg-gradient-to-tr from-[#ffffff] to-[#0091ff] opacity-1000">
+                      <div class="pt-6">
+                        <nav aria-label="Breadcrumb">
+                          <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+                            <li>
+                              <div class="flex items-center">
+                                <a href="#" class="mr-2 text-sm font-medium text-gray-900">Men</a>
+                                <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
+                                  <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                                </svg>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="flex items-center">
+                                <a href="#" class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
+                                <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
+                                  <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                                </svg>
+                              </div>
+                            </li>
+                    
+                            <li class="text-sm">
+                              <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
+                            </li>
+                          </ol>
+                        </nav>
+                    
+                        <!-- Image gallery -->
+                        <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+                          <div class="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
+                            <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="h-full w-full object-cover object-center">
                           </div>
-                          <h3 class="mt-4 text-sm text-gray-700">Blue Shirt</h3>
-                          <p class="mt-1 text-lg font-medium text-gray-900">$25</p>
-                        </a>
-                        <a href="#" class="group">
-                          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./assets/Special-edition.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                          <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+                            <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+                              <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
+                            </div>
+                            <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+                              <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="h-full w-full object-cover object-center">
+                            </div>
                           </div>
-                          <h3 class="mt-4 text-sm text-gray-700">Special Edition T-Shirt</h3>
-                          <p class="mt-1 text-lg font-medium text-gray-900">$55</p>
-                        </a>
-                        <a href="#" class="group">
-                          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./assets/pitcrew.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                          <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
+                            <img src="https://tailwindui.com/plus/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
                           </div>
-                          <h3 class="mt-4 text-sm text-gray-700">Pit Crew T-shirt</h3>
-                          <p class="mt-1 text-lg font-medium text-gray-900">$20</p>
-                        </a>
-                        <!--Second Column-->
-                        <a href="#" class="group">
-                          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./assets/Hoodie-collab.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
-                          </div>
-                          <h3 class="mt-4 text-sm text-gray-700">Porsche x Benefactor collab hoodie</h3>
-                          <p class="mt-1 text-lg font-medium text-gray-900">$60</p>
-                        </a>
-                        <a href="#" class="group">
-                          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./assets/porshce-collab.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-                          </div>
-                          <h3 class="mt-4 text-sm text-gray-700">Porsche x Benefacotr collab hoodie</h3>
-                          <p class="mt-1 text-lg font-medium text-gray-900">$42</p>
-                        </a>
-                        <a href="#" class="group">
-                          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./assets/porsche-tshirt.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
-                          </div>
-                          <h3 class="mt-4 text-sm text-gray-700">Porsche 911 GT3 RS T-Shirt - White Edition</h3>
-                          <p class="mt-1 text-lg font-medium text-gray-900">$25</p>
-                        </a>
-                        <a href="#" class="group">
-                          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                            <img src="./assets/Porsche_911_GT3_Hoodie_Black.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
-                          </div>
-                          <h3 class="mt-4 text-sm text-gray-700">Porsche 911 GT3 RS Hoodie - Black Edition</h3>
-                          <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
-                        </a>
-                        <!-- More products... -->
+                        </div>
+                    
+                        <!-- Product info -->
+  <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
+  <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+  <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Basic Tee 6-Pack</h1>
+  </div>
+                                  
+                          <!-- Options -->
+                <div class="mt-4 lg:row-span-3 lg:mt-0">
+                <h2 class="sr-only">Product information</h2>
+                <p class="text-3xl tracking-tight text-gray-900">$192</p>
+                                  
+                            <!-- Reviews -->
+                                                  <div class="mt-6">
+                                                  <h3 class="sr-only">Reviews</h3>
+                                                  <div class="flex items-center">
+                                                  <div class="flex items-center">
+                                                  <!-- Active: "text-gray-900", Default: "text-gray-200" -->
+                                                  <svg class="h-5 w-5 flex-shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+                                                  </svg>
+                                                  <svg class="h-5 w-5 flex-shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                                      <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+                                                  </svg>
+                                                  <svg class="h-5 w-5 flex-shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+                                                  </svg>
+                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+                                                </svg>
+                                                <svg class="h-5 w-5 flex-shrink-0 text-gray-200" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                                  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+                                                </svg>
+                                              </div>
+                                              <p class="sr-only">4 out of 5 stars</p>
+                                              <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
+                                            </div>
+                                          </div>
+                                  
+                                          <form class="mt-10">
+                                            <!-- Colors -->
+                                            <div>
+                                              <h3 class="text-sm font-medium text-gray-900">Color</h3>
+                                  
+                                              <fieldset aria-label="Choose a color" class="mt-4">
+                                                <div class="flex items-center space-x-3">
+                                                  <!-- Active and Checked: "ring ring-offset-1" -->
+                                                  <label aria-label="White" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
+                                                    <input type="radio" name="color-choice" value="Black" class="sr-only">
+                                                    <span aria-hidden="true" class="h-8 w-8 rounded-full border border-black border-opacity-10 bg-black"></span>
+                                                  </label>
+                                                  <!-- Active and Checked: "ring ring-offset-1" -->
+                                                  <label aria-label="Gray" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
+                                                    <input type="radio" name="color-choice" value="Blue" class="sr-only">
+                                                    <span aria-hidden="true" class="h-8 w-8 rounded-full border border-black border-opacity-10 bg-blue-600"></span>
+                                                  </label>
+                                                  <!-- Active and Checked: "ring ring-offset-1" -->
+                                                  <label aria-label="Black" class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-900 focus:outline-none">
+                                                    <input type="radio" name="color-choice" value="White" class="sr-only">
+                                                    <span aria-hidden="true" class="h-8 w-8 rounded-full border border-black border-opacity-10 bg-white"></span>
+                                                  </label>
+                                                </div>
+                                              </fieldset>
+                                            </div>
+                                  
+                                            <!-- Sizes -->
+                                            <div class="mt-10">
+                                              <div class="flex items-center justify-between">
+                                                <h3 class="text-sm font-medium text-gray-900">Size</h3>
+                                                <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
+                                              </div>
+                                  
+                                              <fieldset aria-label="Choose a size" class="mt-4">
+                                                <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
+                                                  <!-- Active: "ring-2 ring-indigo-500" -->
+                                                  <label class="group relative flex cursor-not-allowed items-center justify-center rounded-md border bg-gray-50 px-4 py-3 text-sm font-medium uppercase text-gray-200 hover:bg-gray-50 focus:outline-none sm:flex-1 sm:py-6">
+                                                    <input type="radio" name="size-choice" value="XXS" disabled class="sr-only">
+                                                    <span>XXS</span>
+                                                    <span aria-hidden="true" class="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200">
+                                                      <svg class="absolute inset-0 h-full w-full stroke-2 text-gray-200" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
+                                                        <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke" />
+                                                      </svg>
+                                                    </span>
+                                                  </label>
+                                                  <!-- Active: "ring-2 ring-indigo-500" -->
+                                                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
+                                                    <input type="radio" name="size-choice" value="XS" class="sr-only">
+                                                    <span>XS</span>
+                                                    <!--
+                                                      Active: "border", Not Active: "border-2"
+                                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                                    -->
+                                                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                                                  </label>
+                                                  <!-- Active: "ring-2 ring-indigo-500" -->
+                                                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
+                                                    <input type="radio" name="size-choice" value="S" class="sr-only">
+                                                    <span>S</span>
+                                                    <!--
+                                                      Active: "border", Not Active: "border-2"
+                                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                                    -->
+                                                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                                                  </label>
+                                                  <!-- Active: "ring-2 ring-indigo-500" -->
+                                                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
+                                                    <input type="radio" name="size-choice" value="M" class="sr-only">
+                                                    <span>M</span>
+                                                    <!--
+                                                      Active: "border", Not Active: "border-2"
+                                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                                    -->
+                                                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                                                  </label>
+                                                  <!-- Active: "ring-2 ring-indigo-500" -->
+                                                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
+                                                    <input type="radio" name="size-choice" value="L" class="sr-only">
+                                                    <span>L</span>
+                                                    <!--
+                                                      Active: "border", Not Active: "border-2"
+                                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                                    -->
+                                                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                                                  </label>
+                                                  <!-- Active: "ring-2 ring-indigo-500" -->
+                                                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
+                                                    <input type="radio" name="size-choice" value="XL" class="sr-only">
+                                                    <span>XL</span>
+                                                    <!--
+                                                      Active: "border", Not Active: "border-2"
+                                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                                    -->
+                                                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                                                  </label>
+                                                  <!-- Active: "ring-2 ring-indigo-500" -->
+                                                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
+                                                    <input type="radio" name="size-choice" value="2XL" class="sr-only">
+                                                    <span>2XL</span>
+                                                    <!--
+                                                      Active: "border", Not Active: "border-2"
+                                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                                    -->
+                                                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                                                  </label>
+                                                  <!-- Active: "ring-2 ring-indigo-500" -->
+                                                  <label class="group relative flex cursor-pointer items-center justify-center rounded-md border bg-white px-4 py-3 text-sm font-medium uppercase text-gray-900 shadow-sm hover:bg-gray-100 focus:outline-none sm:flex-1 sm:py-6">
+                                                    <input type="radio" name="size-choice" value="3XL" class="sr-only">
+                                                    <span>3XL</span>
+                                                    <!--
+                                                      Active: "border", Not Active: "border-2"
+                                                      Checked: "border-indigo-500", Not Checked: "border-transparent"
+                                                    -->
+                                                    <span class="pointer-events-none absolute -inset-px rounded-md" aria-hidden="true"></span>
+                                                  </label>
+                                                </div>
+                                              </fieldset>
+                                            </div>
+                                  
+                                            <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add to bag</button>
+                                          </form>
+                                        </div>
+                                  
+                                        <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+                                          <!-- Description and details -->
+                                          <div>
+                                            <h3 class="sr-only">Description</h3>
+                                  
+                                            <div class="space-y-6">
+                                              <p class="text-base text-gray-900">The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: &quot;Black&quot;. Need to add an extra pop of color to your outfit? Our white tee has you covered.</p>
+                                            </div>
+                                          </div>
+                                  
+                                          <div class="mt-10">
+                                            <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
+                                  
+                                            <div class="mt-4">
+                                              <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
+                                                <li class="text-gray-400"><span class="text-gray-600">Hand cut and sewn locally</span></li>
+                                                <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
+                                                <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
+                                                <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                  
+                                          <div class="mt-10">
+                                            <h2 class="text-sm font-medium text-gray-900">Details</h2>
+                                            <div class="mt-4 space-y-6">
+                                              <p class="text-sm text-gray-600">The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming &quot;Charcoal Gray&quot; limited release.</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                  </div>
+  
+  
+                      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+                        <h2 class="sr-only">Products</h2>
+                    
+                        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                          <a href="#" class="group">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                              <img src="./assets/black-tahirt.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">Black Shirt</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$30</p>
+                          </a>
+                          <a href="#" class="group">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                              <img src="./assets/Blue-Tshirt.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">Blue Shirt</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$25</p>
+                          </a>
+                          <a href="#" class="group">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                              <img src="./assets/Special-edition.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">Special Edition T-Shirt</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$55</p>
+                          </a>
+                          <a href="#" class="group">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                              <img src="./assets/pitcrew.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">Pit Crew T-shirt</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$20</p>
+                          </a>
+                          <!--Second Column-->
+                          <a href="#" class="group">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                              <img src="./assets/Hoodie-collab.jpg" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">Porsche x Benefactor collab hoodie</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$60</p>
+                          </a>
+                          <a href="#" class="group">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                              <img src="./assets/porshce-collab.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">Porsche x Benefacotr collab hoodie</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$42</p>
+                          </a>
+                          <a href="#" class="group">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                              <img src="./assets/porsche-tshirt.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">Porsche 911 GT3 RS T-Shirt - White Edition</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$25</p>
+                          </a>
+                          <a href="#" class="group">
+                            <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                              <img src="./assets/Porsche_911_GT3_Hoodie_Black.jpg" alt="Hand holding black machined steel mechanical pencil with brass tip and top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700">Porsche 911 GT3 RS Hoodie - Black Edition</h3>
+                            <p class="mt-1 text-lg font-medium text-gray-900">$35</p>
+                          </a>
+                          <!-- More products... -->
+                        </div>
                       </div>
                     </div>
-                  </div>
-                                                          
-<!--Footer-->
-<footer class="bg-gray-800 text-gray-300 py-8" id="Footer">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Column 1 -->
-      <div>
-        <h2 class="text-lg font-semibold mb-4">Benefactor</h2>
-        <ul class="space-y-2">
-          <li><a href="#About" class="hover:text-blue-600">About Us</a></li>
-          <li><a href="./carrers.html" class="hover:text-blue-600">Careers</a></li>
-          <li><a href="#" class="hover:text-blue-600">Automotive</a></li>
-          <li><a href="#Store" class="hover:text-blue-600">Store</a></li>
-        </ul>
+                                                            
+  <!--Footer-->
+  <footer class="bg-gray-800 text-gray-300 py-8" id="Footer">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Column 1 -->
+        <div>
+          <h2 class="text-lg font-semibold mb-4">Benefactor</h2>
+          <ul class="space-y-2">
+            <li><a href="#About" class="hover:text-blue-600">About Us</a></li>
+            <li><a href="./carrers.html" class="hover:text-blue-600">Careers</a></li>
+            <li><a href="./automotive.html" class="hover:text-blue-600">Automotive</a></li>
+            <li><a href="#Store" class="hover:text-blue-600">Store</a></li>
+          </ul>
+        </div>
+        <!-- Column 2 -->
+        <div class="absolute left-1/3">
+          <h2 class="text-lg font-semibold mb-4">Contact</h2>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-instagram fa-lg" style="color: #74C0FC;"></i>
+            Instagram</a></li>
+            <li><a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-youtube fa-lg" style="color: #74C0FC;"></i>
+            Youtube</a></li>
+            <li><a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-tiktok fa-lg" style="color: #74C0FC;"></i>
+            Tiktok</a></li>
+            <li><a href="#" class="hover:text-blue-400">
+              <i class="fa-brands fa-linkedin fa-lg" style="color: #74C0FC;"></i>
+            LinkedIn</a></li>
+          </ul>
+        </div>
       </div>
-      <!-- Column 2 -->
-      <div class="absolute left-1/3">
-        <h2 class="text-lg font-semibold mb-4">Contact</h2>
-        <ul class="space-y-2">
-          <li><a href="#" class="hover:text-blue-400">
-            <i class="fa-brands fa-instagram fa-lg" style="color: #74C0FC;"></i>
-          Instagram</a></li>
-          <li><a href="#" class="hover:text-blue-400">
-            <i class="fa-brands fa-youtube fa-lg" style="color: #74C0FC;"></i>
-          Youtube</a></li>
-          <li><a href="#" class="hover:text-blue-400">
-            <i class="fa-brands fa-tiktok fa-lg" style="color: #74C0FC;"></i>
-          Tiktok</a></li>
-          <li><a href="#" class="hover:text-blue-400">
-            <i class="fa-brands fa-linkedin fa-lg" style="color: #74C0FC;"></i>
-          LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-
-          <div class="relative lg:w-2/3 top-10 left-0 justify-center">
-            <h2 class="text-4xl font-semibold tracking-tight text-white">Subscribe to our newsletter</h2>
-            <p class="mt-4 text-lg text-gray-300">To recieve news regarding our performances across the competition and sales in our store</p>
-            <div class="mt-6 flex max-w-md gap-x-4">
-              <label for="email-address" class="sr-only">Email address</label>
-              <input id="email-address" name="email" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" placeholder="Enter your email">
-              <button type="submit" class="flex-none rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+  
+            <div class="relative lg:w-2/3 top-10 left-0 justify-center">
+              <h2 class="text-4xl font-semibold tracking-tight text-white">Subscribe to our newsletter</h2>
+              <p class="mt-4 text-lg text-gray-300">To recieve news regarding our performances across the competition and sales in our store</p>
+              <div class="mt-6 flex max-w-md gap-x-4">
+                <label for="email-address" class="sr-only">Email address</label>
+                <input id="email-address" name="email" type="email" autocomplete="email" required class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" placeholder="Enter your email">
+                <button type="submit" class="flex-none rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Subscribe</button>
+              </div>
             </div>
           </div>
-        </div>
-        
-    <!-- Bottom Row -->
-    <div class="mt-10 top-5 relative text-center text-sm text-gray-400">
-      &copy; 2024 Benefactor Group. All rights reserved. This website is made only for study purposes. Please do not take this web seriously.
-    </div>
-</footer>
-</body>
-</html>
+          
+      <!-- Bottom Row -->
+      <div class="mt-10 top-5 relative text-center text-sm text-gray-400">
+        &copy; 2024 Benefactor Group. All rights reserved. This website is made only for study purposes. Please do not take this web seriously.
+      </div>
+  </footer>
+  </body>
+  </html>
